@@ -1,0 +1,45 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+	<title> 
+		Randomly Generated Recipes 
+	</title> 
+</head> 
+
+<body style = "text-align:center;"> 
+	
+	<h1 style = "color:green;"> 
+		Recipe Generator 
+	</h1> 
+	
+	<p id = "P_UP" style = 
+		"font-size: 15px; font-weight: bold;"> 
+	</p> 
+	
+	<button id = "button" onclick = "Recipe_gen()"> 
+		click here 
+	</button> 
+	
+	<p id = "P_DOWN" style = 
+		"font-size: 24px; font-weight: bold; color: green;"> 
+	</p> 
+	
+	<script> 
+		var up = document.getElementById('P_UP'); 
+		var down = document.getElementById('P_DOWN'); 
+		
+		var protein = ["pork", "beef", "tofu", "fish", "lamb", "chicken", "turkey"]; 
+		var ingredient_prep = ["ground", "chopped", "sliced", "minced"]
+		var vegetable = ["Apple","Apricot","Artichoke","Asparagus","Avocado","BambooShoots","Banana","BeanSprouts","Beans","Beets","BellPeppers","Blackberries","Blueberries","BokChoy","Broccoli","BrusselsSprouts","Cabbage","Cantaloupe","Carrots","Cauliflower","Celery","Cherries","Coconuts","CollardGreens","Corn","Cranberries","Cucumber","Dates","Eggplant","Figs","Garlic","Grapefruit","GreenBeans","GreenOnions","Guava","Hominy","Honeydew","IcebergLettuce","Kale","Leeks","Lemons","Lettuce","LimaBeans","Limes","Madarins","Mangos","Mushrooms","Nectarines","Okra","Onion","Oranges","Papayas","Parsnip","Peaches","Pears","Peas","Peppers","Persimmons","Pineapple","Plantains","Plums","Pomegranate","Potatoes","Pumpkin","Radicchio","Radishes","Raisins","Red Cabbage","Rhubarb","Rice","Romaine Lettuce","Rutabaga","Shallots","Snow Peas","Spinach","Sprouts","Squash","String Beans","Sweet Potato","Tomatillo","Tomato","Turnip","Watermelon","Yams","Zucchini"]
+		var cooking_method = ["microwaved", "deep fried", "baked", "broiled", "poached", "sou vide", "pan fried", "grilled", "charred", "blackened", "steamed", "sauted", "pickled", "stir fried", "pressure cooked"]
+		up.innerHTML = "Click on the button to create " 
+			+ "a random recipe.<br><br>"; 
+		
+		function Recipe_gen() { 
+			down.innerHTML = cooking_method[Math.floor(Math.random() * cooking_method.length)] + " " + ingredient_prep[Math.floor(Math.random() * ingredient_prep.length)] + " " + protein[Math.floor(Math.random() * protein.length)] + " and " + cooking_method[Math.floor(Math.random() * cooking_method.length)] + " " + ingredient_prep[Math.floor(Math.random() * ingredient_prep.length)] + " " + vegetable[Math.floor(Math.random() * vegetable.length)]; 
+		} 
+	</script> 
+</body> 
+
+</html> 
